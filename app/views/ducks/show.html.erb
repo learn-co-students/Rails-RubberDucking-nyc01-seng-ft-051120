@@ -1,0 +1,8 @@
+<h1><%= @duck.name%>'s Show Page!</h1>
+
+<h3>Name: <%= @duck.name %></h3><br>
+<h3>Decription: <%= @duck.description %></h3><br>
+<h5>Owner Student: <%= link_to @duck.student_name, student_path(@duck.student) %></h5>
+
+<%= link_to "INDEX", ducks_path%><br>
+<%= link_to "EDIT", edit_duck_path %>
