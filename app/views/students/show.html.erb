@@ -1,0 +1,17 @@
+<h1> Show Page</h1>
+
+<p><%= @student.name %> <br> MOD:<%= @student.mod %></p>
+
+<h3>All Ducks By The Student </h3>
+
+  <% @student.ducks.each do |duck| %>
+    <p>NAME: <%= duck.name %> </P>
+   <P> GENRE:<%= duck.description%></p>
+    
+ <% end %>
+
+<%= link_to 'INDEX', students_path %><br>
+
+<%= link_to 'EDIT', edit_student_path(@student) %><br>
+
+<%= button_to 'DELETE', student_path(@student), method: :delete %>
