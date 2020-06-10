@@ -1,0 +1,9 @@
+<h1>Edit Student Info</h1>
+<%= form_for @student do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+<%= f.label :mod %>
+<%= f.number_field :mod, in: 1..5 %>
+<%= f.submit %>
+<% end %>

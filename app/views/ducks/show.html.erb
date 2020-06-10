@@ -1,0 +1,5 @@
+<h1>Duck Info</h1>
+
+<h2><%= @duck.name %></h2>
+<h3>He/She belongs to: <%= link_to @duck.student.name, student_path(@duck.student) if @duck.student %></h3>
+<p><%= @duck.description %></p>
