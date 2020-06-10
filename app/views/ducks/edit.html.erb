@@ -1,0 +1,24 @@
+<h1>Edit a Cool Duck:</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <h2 style='color: red;'><%= error %></h2>
+    <% end %>
+<% end %>
+
+<%= form_for @duck do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %><br><br>
+
+<%= f.label :description %>
+<%= f.text_area :description %><br><br>
+
+<%= f.label :student %>
+<%= f.collection_select(:student_id, @students, :id, :name) %><br><br>
+
+<%= f.submit %>
+<% end %><br>
+
+
+<%= link_to "All Ducks", ducks_path %><br><br>
+<%= link_to "All Students", students_path %>
