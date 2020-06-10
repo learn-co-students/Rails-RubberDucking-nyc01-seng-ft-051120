@@ -1,0 +1,10 @@
+<h1>Here's a cool duck:</h1>
+
+<h2><%= @duck.name %></h2>
+<p><%= @duck.description %></p>
+<p><%= @duck.student.name %></p>
+
+ <%= link_to "Edit", edit_duck_path %><br><br>
+<%= button_to "Delete", duck_path(@duck), method: :delete %><br><br>
+ <%= link_to "All Ducks", ducks_path %><br><br>
+<%= link_to "All Students", students_path %>

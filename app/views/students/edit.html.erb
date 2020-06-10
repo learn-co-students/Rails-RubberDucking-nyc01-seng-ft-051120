@@ -1,0 +1,18 @@
+<h1>Edit Student Name</h1>
+
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <h2 style='color: red;'><%= error %></h2>
+    <% end %>
+<% end %>
+
+<%= form_for @student do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+
+
+<%= f.submit %>
+<% end %><br><br>
+
+<%= link_to "All Students", students_path %><br><br>
+<%= link_to "All Ducks", ducks_path %>
