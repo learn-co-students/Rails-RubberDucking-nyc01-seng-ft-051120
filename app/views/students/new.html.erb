@@ -1,0 +1,21 @@
+<hr color='red'>
+<h1>Lets Create Some New Students!!</h1>
+<hr color='red'>
+<% if flash[:errors] %>
+<h4 style="color :red">
+<ol>
+  <% flash[:errors].each do |e| %>
+  <li><%=e%></li>
+  <% end %>
+  <ol>
+  </h4>
+<% end %>
+
+<%= form_for @student do |f| %>
+<%= f.label :"Name: "%>
+<%= f.text_field :name %>
+
+<%= f.label :"Mod: "%>
+<%= f.number_field :mod %>
+<%= f.submit %>
+<% end %>

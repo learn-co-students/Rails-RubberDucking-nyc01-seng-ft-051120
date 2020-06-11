@@ -1,0 +1,7 @@
+<hr color='red'>
+<h1>Duck: <%= @duck.name%></h1>
+<hr color='red'>
+<h3>Type: <%=@duck.description%></h3>
+<h3>Owner: <%=@duck.student.name%></h3>
+<%=button_to " EDIT ", edit_duck_path(@duck.id), method: :get%>
+<%=button_to "DELETE ", duck_path(@duck.id), method: :delete%>

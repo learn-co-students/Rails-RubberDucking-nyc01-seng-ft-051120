@@ -1,0 +1,16 @@
+<hr color='red'>
+<h1>Student: <%=@student.name%></h1>
+<hr color='red'>
+<h3>
+    Mod: <%=@student.mod%>
+    <ul>
+    <%@student.ducks.each do |d| %>
+    <li> <%= link_to  d.name, duck_path(d.id) %></li>
+    <% end %>
+    </ul>
+
+
+</h3>
+<%= button_to "DELETE", student_path(@student), method: :delete %>  <br>
+
+<%= button_to " EDIT ", edit_student_path(@student), method: :get%>
