@@ -1,0 +1,22 @@
+<h1>Create New Duck<h1>
+
+<% if flash[:duck_errors] %>
+  <% flash[:duck_errors].each do |e|%>
+    <p> <%= e %> <p>
+    <% end %>
+  <% end %>
+
+
+<%= form_for @duck do |f| %>
+  <%=f.label :name %>
+  <%=f.text_field :name %>
+
+  <%=f.label :description %>
+  <%=f.text_area :description%>
+
+  <%=f.label :student_id %>
+  <%=f.collection_select :student_id, @students, :id, :name%>
+
+  <%=f.submit%>
+
+  <% end %>
