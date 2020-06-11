@@ -1,3 +1,6 @@
 <h1><%= @duck.name %></h1>
 
 owner: <%= @duck.student.name %>
+
+
+<%= button_to "Delete #{@duck.name}", duck_path(@duck), method: :delete%>
