@@ -13,8 +13,28 @@ class StudentsController < ApplicationController
   end 
 
   def create 
-    @student = Student.create(student_params)   
-    redirect_to student_path(@student) 
+    @student = Student.create(student_params)
+      # 
+      if @student.valid?  
+        redirect_to student_path(@student)
+      else 
+        render :new
+        # recognizes only current student 
+      end
+  end 
+
+  def edit 
+    @student = Student.find(params[:id])
+  end 
+
+  def update
+    @student = Student.find(params[:id]) 
+    @student.update(student_params) 
+    if @student.valid?
+      redirect_to student_path(@student)
+    else
+      render :edit 
+    end 
   end 
 
 private 

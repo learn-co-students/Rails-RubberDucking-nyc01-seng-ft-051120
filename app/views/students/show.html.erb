@@ -5,3 +5,11 @@ mod: <%= @student.mod %>
 ducks: <% @student.ducks.each do |duck| %>
 <%= duck.name %><br>
 <% end %>
+
+<!-- <%= link_to "Edit #{@student.name}", edit_student_path(@student) %>   -->
+<br>
+<%= link_to "Edit", edit_student_path(@student) %>  
+
+
+<br>
+<%= link_to "Return to All Students", students_path %>

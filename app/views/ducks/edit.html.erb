@@ -1,0 +1,22 @@
+<h1>Edit <%= @duck.name %></h1>
+
+<% if @duck.errors.any? %>   
+    <% @duck.errors.full_messages.each do |message| %> 
+        <h3>Error:<%= message %></h3><br>
+    <% end %>
+<% end %> 
+
+<%= form_for @duck do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :description %>
+    <%= f.text_area :description %> 
+
+    <%= f.label :student_id %>
+    <%= f.collection_select :student_id, @students, :id, :name %>
+
+    <%= f.submit %> 
+
+<% end %>
