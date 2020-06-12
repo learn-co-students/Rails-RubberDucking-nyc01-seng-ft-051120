@@ -2,6 +2,8 @@
 
 <ul>
   <% @students.each do |student| %>
-    <li> <%= student.name %> </li>
+
+    <li> <a href="/students/<%=student.id%>"> <h4 class="text-center"><%= student.name %></h4> </a> </li>
   <% end %>
 </ul>
+

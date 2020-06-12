@@ -2,6 +2,7 @@
 
 <ul>
   <% @ducks.each do |duck| %>
-    <li> <%= duck.name %> </li>
+    <li> <a href="/ducks/<%=duck.id%>"> <h4 class="text-center"><%= duck.name %></h4> </a> </li>
   <% end %>
 </ul>
+
